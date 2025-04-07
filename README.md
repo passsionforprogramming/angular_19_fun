@@ -41,7 +41,7 @@ You can log out anytime by clicking on the menu in the top bar.
 
 ## Deployed Solution
 
-[Deployed Solution Link](http://your-deployed-link)
+[Deployed Solution Link](https://angular-fun.netlify.app/)
 
 ## License
 
