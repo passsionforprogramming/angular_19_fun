@@ -1,0 +1,22 @@
+<div class="auth-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" />
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Enter a valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" />
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+      <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">Minimum length is 6</mat-error>
+    </mat-form-field>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <button mat-raised-button color="primary" type="submit">Login</button>
+  </form>
+  <div class="auth-toggle">
+    <button mat-button routerLink="/signup">Don't have an account? Sign up</button>
+  </div>
+</div>

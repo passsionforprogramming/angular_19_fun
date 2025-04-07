@@ -1,59 +1,48 @@
-# MocafiInterview
+# Angular User CRUD Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+This is a modern Angular 19 application built with Angular Material for high performance. It enables CRUD operations with users using the Go REST API (https://gorest.co.in).
 
-## Development server
+![Application Screenshot](readme_image.png)
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
-```
+- Login interface where any credentials will work for testing purposes
+- User Management: Create, Read, Update, Delete operations
+- Form validations for all inputs
+- API integration with Go REST API
+- Angular Material design components
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## How It Works
 
-## Code scaffolding
+The app simulates an authentication flow using a mock login system. There's no backend database for user authentication - any email and password combination will work for testing purposes. The app uses localStorage to maintain the session state.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+After logging in, you'll see the users table where you can view all users from the Go REST API. You can edit user properties or delete users directly from this interface.
 
-```bash
-ng generate component component-name
-```
+Want to add a new user? Just hit the sign-up button and fill out the form. This will create an actual new user in the Go REST API database.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+You can log out anytime by clicking on the menu in the top bar.
 
-```bash
-ng generate --help
-```
+## Setup
 
-## Building
+1. Clone the repository:
+   ```
+   git clone github.com:passsionforprogramming/angular_19_fun.git
+   ```
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Replace the API token in `src/app/api.service.ts` with your token from https://gorest.co.in.
+4. Serve the application:
+   ```
+   ng serve
+   ```
+5. Open your browser at http://localhost:4200.
 
-To build the project run:
+## Deployed Solution
 
-```bash
-ng build
-```
+[Deployed Solution Link](http://your-deployed-link)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## License
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT

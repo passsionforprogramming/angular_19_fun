@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Auth form styling */
+.auth-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.auth-toggle {
+  text-align: center;
+  margin-top: 16px;
+}

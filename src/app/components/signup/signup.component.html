@@ -1,0 +1,53 @@
+<div class="auth-container">
+  <h2>Sign Up</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" type="text" />
+      <mat-error *ngIf="signupForm.get('name')?.hasError('required')">Name is required</mat-error>
+      <mat-error *ngIf="signupForm.get('name')?.hasError('minlength')">Name must be at least 3 characters</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" />
+      <mat-error *ngIf="signupForm.get('email')?.hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="signupForm.get('email')?.hasError('email')">Enter a valid email</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" />
+      <mat-error *ngIf="signupForm.get('password')?.hasError('required')">Password is required</mat-error>
+      <mat-error *ngIf="signupForm.get('password')?.hasError('minlength')">Minimum length is 6</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option value="male">Male</mat-option>
+        <mat-option value="female">Female</mat-option>
+        <mat-option value="other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="active">Active</mat-option>
+        <mat-option value="inactive">Inactive</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    
+    <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid || isLoading" class="submit-button">
+      <span *ngIf="!isLoading">Sign Up</span>
+      <mat-spinner *ngIf="isLoading" diameter="20" color="accent" class="button-spinner"></mat-spinner>
+    </button>
+  </form>
+  
+  <div class="auth-toggle">
+    <button mat-button routerLink="/login">Already have an account? Log in</button>
+  </div>
+</div>
